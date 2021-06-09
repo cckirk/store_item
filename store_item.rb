@@ -7,10 +7,10 @@ item_array = []
 
 
 class Item
-  def initialize(product, color, price)
-    @product = product
-    @color = color
-    @price = price
+  def initialize(input_options)
+    @product = input_options[:product]
+    @color = input_options[:color]
+    @price = input_options[:price]
   end
 
   def product= (product_text)
@@ -38,7 +38,7 @@ class Item
   end
 end
 
-item1 = Item.new("chair", "Yellow", "$500")
+item1 = Item.new({:product => "chair", :color => "Yellow", :price => "$500"})
 #create a list of commands
 
 puts item1.product
