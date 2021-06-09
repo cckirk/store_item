@@ -7,35 +7,15 @@ item_array = []
 
 
 class Item
+  attr_reader :product, :color, :price
+  attr_writer :product, :color, :price
+
   def initialize(input_options)
     @product = input_options[:product]
     @color = input_options[:color]
     @price = input_options[:price]
   end
 
-  def product= (product_text)
-    @product = product_text
-  end
-
-  def color= (color_text)
-    @color = color_text
-  end
-
-  def price= (price_text)
-    @price = price_text
-  end
-
-  def product
-    @product
-  end
-
-  def color
-    @color
-  end
-
-  def price
-    @price
-  end
 end
 
 item1 = Item.new({:product => "chair", :color => "Yellow", :price => "$500"})
@@ -44,3 +24,6 @@ item1 = Item.new({:product => "chair", :color => "Yellow", :price => "$500"})
 puts item1.product
 puts item1.color
 puts item1.price
+
+item1.product = "ladder"
+puts item1.product
